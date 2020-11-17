@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.summer.dao.UserDao">
+    <resultMap id="userList" type="com.summer.entity.User">
+        <id column="id" property="id" jdbcType="INTEGER"></id>
+        <id column="name" property="name" jdbcType="VARCHAR"></id>
+        <id column="is_admin" property="isAdmin" jdbcType="VARCHAR"></id>
+        <id column="role_id" property="roleId" jdbcType="INTEGER"></id>
+    </resultMap>
+    <sql id="sql_user">
+        id,name,is_admin,role_id
+    </sql>
+
+    <select id="getUserById" parameterType="int" resultMap="userList">
+        select
+        <include refid="sql_user"/>
+        from sys_user where id = #{id}
+    </select>
+</mapper>
