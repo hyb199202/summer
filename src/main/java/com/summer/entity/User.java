@@ -1,6 +1,9 @@
 package com.summer.entity;
 
 import lombok.Data;
+
+import java.util.List;
+
 /**
  * @packageName: summer
  * @author: hyb
@@ -11,6 +14,8 @@ import lombok.Data;
 public class User {
     private int id;
     private String name;
+    private String password;
     private String isAdmin;
-    private int roleId;
+    private String roleId;
+    private List<Role> roles;
 }

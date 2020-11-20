@@ -27,5 +27,10 @@ public class UserController {
         List<User> user = userService.getUserById(id);
         return user;
     }
+    @RequestMapping(value = "/findUserByName", method = RequestMethod.POST)
+    public Object login(@RequestParam String name) {
+        User user = userService.findUserByName(name);
+        return user;
+    }
 
 }

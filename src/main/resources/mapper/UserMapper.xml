@@ -16,4 +16,10 @@
         <include refid="sql_user"/>
         from sys_user where id = #{id}
     </select>
+
+    <select id="findUserByName" parameterType="String" resultMap="userList">
+        select
+        <include refid="sql_user"/>
+        from sys_user where name = #{name}
+    </select>
 </mapper>
