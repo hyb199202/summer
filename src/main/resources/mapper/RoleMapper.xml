@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.summer.dao.RoleDao">
+    <resultMap id="roleList" type="com.summer.entity.Role">
+        <id column="id" property="id" jdbcType="INTEGER"></id>
+        <id column="role_name" property="roleName" jdbcType="VARCHAR"></id>
+        <id column="permissions_id" property="permissionsId" jdbcType="INTEGER"></id>
+    </resultMap>
+    <sql id="sql_role">
+        id,role_name,permissions_id
+    </sql>
+
+    <select id="getRoleById" parameterType="int" resultMap="roleList">
+        select
+        <include refid="sql_role"/>
+        from sys_role where id = #{id}
+    </select>
+</mapper>
