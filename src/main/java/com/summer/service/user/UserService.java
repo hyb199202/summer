@@ -14,4 +14,8 @@ public interface UserService {
     List<User> getUserById(int id);
 
     User findUserByName(String name);
+
+    String addUserRedis(String name);
+
+    String getUserRedis(String name);
 }

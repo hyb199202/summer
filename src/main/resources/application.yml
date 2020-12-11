@@ -6,6 +6,10 @@ spring:
     username: root
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
+  redis:
+    host: localhost
+    password:
+    port: 6379
 #打印sql
 logging:
   level:

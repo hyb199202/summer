@@ -1,4 +1,4 @@
-package com.summer.swagger;
+package com.summer.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
